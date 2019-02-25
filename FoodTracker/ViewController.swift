@@ -40,8 +40,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         // The info dictionary may contain multiple representations of the image. You want to use the original.
-        // Swift 3: guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
-        guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage else {
+        // Swift 4.2: guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage else {
+        guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
         
